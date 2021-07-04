@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "109763080111",
+    "firebase_url": "https://stackdatabase-f6fd9-default-rtdb.firebaseio.com",
+    "project_id": "stackdatabase-f6fd9",
+    "storage_bucket": "stackdatabase-f6fd9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109763080111:android:d1ade74db75f8b33a6095a",
+        "android_client_info": {
+          "package_name": "com.example.stackapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "109763080111-gmndgkjml82g2r995pj1ti9vsj0hlm5n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDD9sYobiFJzPmCJDdhDPmY93h4EhiPq74"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "109763080111-gmndgkjml82g2r995pj1ti9vsj0hlm5n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
