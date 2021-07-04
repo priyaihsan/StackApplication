@@ -76,7 +76,6 @@ public class HomeActivity extends AppCompatActivity {
                 adapter = new AdapterLihatData(daftarKegiatan,HomeActivity.this);
                 rvView.setAdapter(adapter);
                 loading.dismiss();
-                //ada yang harus di tambahin di sini
             }
 
             @Override

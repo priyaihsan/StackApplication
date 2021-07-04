@@ -18,14 +18,13 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class TambahData extends AppCompatActivity {
     private DatabaseReference database;
-    EditText edkode,edJudul,edketerangan,edWaktu,edTanggal;
+    EditText edJudul,edketerangan,edWaktu,edTanggal;
     Button btnSave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tambah_data);
-
         edJudul = (EditText) findViewById(R.id.editJudul);
         edketerangan = (EditText) findViewById(R.id.editDetailKegiatan);
         edWaktu = (EditText) findViewById(R.id.editTime);
@@ -54,7 +53,6 @@ public class TambahData extends AppCompatActivity {
         database.child("DataKegiatan").push().setValue(dk).addOnSuccessListener(this, new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                edkode.setText("");
                 edJudul.setText("");
                 edketerangan.setText("");
                 edWaktu.setText("");
