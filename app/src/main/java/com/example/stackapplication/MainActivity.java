@@ -1,4 +1,4 @@
-package com.example.stackapplication;
+ package com.example.stackapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
-
+    //declarasikan variabel
     ImageView iconimg;
 
     @Override
@@ -15,8 +15,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //mengambil id nya
         iconimg = (ImageView) findViewById(R.id.imageIcon);
 
+        //on click pada image icon untuk pergi ke home activity
         iconimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -17,12 +17,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class TambahData extends AppCompatActivity {
+    //mendeklarasikan variabel
     private DatabaseReference database;
     EditText edJudul,edketerangan,edWaktu,edTanggal;
     Button btnSave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //menyambungkan variabel  kesetiap id nya
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tambah_data);
         edJudul = (EditText) findViewById(R.id.editJudul);
@@ -33,6 +35,7 @@ public class TambahData extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance().getReference();
 
+        //membuat fungsi btn save agar bisa menyimpan data
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +51,7 @@ public class TambahData extends AppCompatActivity {
             }
         });
     }
-
+    //method untuk memasukkan data
     public void submitData(DataKegiatan dk) {
         database.child("DataKegiatan").push().setValue(dk).addOnSuccessListener(this, new OnSuccessListener<Void>() {
             @Override

@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 public class AdapterLihatData extends RecyclerView.Adapter<AdapterLihatData.ViewHolder> {
-
+    //mendeklarasikan variabel
     private ArrayList<DataKegiatan> dataKegiatan;
     private Context context;
     private DatabaseReference databaseReference;
@@ -61,6 +61,7 @@ public class AdapterLihatData extends RecyclerView.Adapter<AdapterLihatData.View
         holder.tvTitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //mendeclarasikan popup menu
                 PopupMenu popupMenu = new PopupMenu(view.getContext(),view);
                 popupMenu.inflate(R.menu.menuitem);
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -68,30 +69,25 @@ public class AdapterLihatData extends RecyclerView.Adapter<AdapterLihatData.View
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         switch (menuItem.getItemId()){
                             case R.id.DetailData:
+                                //untuk mengambil data menggunakan bundle
                                 Bundle bundle = new Bundle();
                                 bundle.putString("kunci1",key);
                                 bundle.putString("kunci2",judul);
                                 bundle.putString("kunci3",kegiatan);
                                 bundle.putString("kunci4",waktu);
                                 bundle.putString("kunci5",tanggal);
-
+                                //untuk masuk ke activity detailData
                                 Intent intent = new Intent(view.getContext(),DetailData.class);
                                 intent.putExtras(bundle);
                                 view.getContext().startActivity(intent);
                                 break;
                             case R.id.editData:
-                                Bundle bundl = new Bundle();
-                                bundl.putString("kunci1",key);
-                                bundl.putString("kunci2",judul);
-                                bundl.putString("kunci3",kegiatan);
-                                bundl.putString("kunci4",waktu);
-                                bundl.putString("kunci5",tanggal);
-
                                 Intent inten = new Intent(view.getContext(),EditData.class);
-                                inten.putExtras(bundl);
                                 view.getContext().startActivity(inten);
                                 break;
                             case R.id.deleteData:
+                                //membuat alert dialog agar sebelum di hapus di tanya terlebih dahulu apakah sudah yakin ingin
+                                // menghapus itu
                                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(view.getContext());
                                 alertDialog.setTitle("Yakin data " + judul + " akan dihapus?");
                                 alertDialog.setMessage("Tekan 'Ya' untuk menghapus")

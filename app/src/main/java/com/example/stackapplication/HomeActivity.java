@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
-
+    //mendeklarasikan variabel
     private DatabaseReference database;
     private RecyclerView rvView;
     private RecyclerView.Adapter adapter;
@@ -60,8 +60,7 @@ public class HomeActivity extends AppCompatActivity {
                 true,
                 false);
 
-        //ada yang harus di tambahin di sini
-
+        //untuk menambahkan data ke firebase
         database = FirebaseDatabase.getInstance().getReference();
         database.child("DataKegiatan").addValueEventListener(new ValueEventListener() {
             @Override
